@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohammad Osman — Selected work</title>
+<meta name="description" content="Mohammad Osman — Data Analysis & Operations Research. Selected project experience in forecasting, optimization and software systems.">
+<meta property="og:title" content="Mohammad Osman — Selected work">
+<meta property="og:description" content="Data Analysis & Operations Research. Selected project experience in forecasting, optimization and software systems.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://mohammed-alawami.github.io/mohammad.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234d3533'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23fdfcfb' text-anchor='middle'%3EMO%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="card">
+
+  <header class="header">
+    <h1 class="title">Mohammad Osman</h1>
+    <p class="fact">Data Analysis &amp; Operations Research</p>
+  </header>
+
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-copy">
+      <p class="kicker">Alexandria, Egypt · Computer Science</p>
+      <h2 class="headline">Data into<br><em>decisions.</em></h2>
+      <p class="hero-intro">Analysis is the starting point. The interesting part is deciding what to do next, under real constraints.</p>
+      <p class="personal">I'm Mohammad, a third-year Computer Science student focused on data analysis and operations research. This is a selection of my project experience in forecasting, optimization and software systems.</p>
+      <div class="hero-link"><a class="link" href="https://github.com/Mohammed-ALawami">Explore my GitHub</a></div>
+    </div>
+    <figure class="portrait">
+      <img src="mohammad.jpg" alt="Portrait of Mohammad Osman wearing a white shirt, dark tie and black jacket against a gray background.">
+      <figcaption>Mohammad Osman<span>Selected work · 2026</span></figcaption>
+    </figure>
+  </section>
+
+  <div class="intro-strip">
+    <div><strong>Decision science</strong><span>Forecasting → optimization → evaluation</span></div>
+    <div><strong>Software thinking</strong><span>Data integrity, APIs and usable interfaces</span></div>
+  </div>
+
+  <section class="group" aria-label="Selected work">
+    <p class="group-label">Selected work</p>
+    <h2 class="group-heading">The question. The model. The evidence.</h2>
+    <p class="p">Four projects, with the assumptions left visible. The two data and optimization studies lead; the software projects show the systems around the analysis.</p>
+    <div class="control" role="group" aria-labelledby="filter-label">
+      <span id="filter-label" class="control-label">Explore projects</span>
+      <div class="choice-row">
+        <button type="button" class="button" data-filter="all" aria-pressed="true">All work</button>
+        <button type="button" class="button" data-filter="data" aria-pressed="false">Data &amp; OR</button>
+        <button type="button" class="button" data-filter="software" aria-pressed="false">Software</button>
+      </div>
+    </div>
+    <p class="count" aria-live="polite" id="count">4 of 4 projects shown</p>
+
+    <article class="case" data-category="data" aria-labelledby="project-1">
+      <div class="case-top"><span class="index">01</span><span class="eyebrow">Forecasting + constrained optimization</span></div>
+      <h3 class="project-title" id="project-1">Demand &amp; Inventory Decision Lab</h3>
+      <p class="question">What should the next purchase order contain?</p>
+      <p class="summary">A retail decision study that links SQL analysis, demand forecasts and purchasing constraints, then tests whether a more sophisticated policy actually helps.</p>
+      <div class="tags"><span>Python</span><span>SQL / DuckDB</span><span>HiGHS</span><span>MILP</span></div>
+      <div class="photos single" role="region" aria-label="Demand &amp; Inventory Decision Lab project visual">
+        <img src="inventory-forecast.png" alt="Forecast error comparison for moving-average, smoothing, seasonal and naive methods, with separate validation and test bars.">
+      </div>
+      <p class="caption">Actual project output: forecast backtest. WAPE is forecast error; lower is better. MA8 was selected on validation, not on the test window.</p>
+      <div class="stat-grid">
+        <div><span>Model scope</span><strong>80 SKUs</strong></div>
+        <div><span>Held-out evaluation</span><strong>26 weeks</strong></div>
+        <div><span>Data</span><strong>Real UCI retail sales</strong></div>
+      </div>
+      <div class="insight"><span class="eyebrow">The useful finding</span><p>A better forecast does not automatically produce a better purchasing decision. The value of optimization depends on the constraints and the strength of the baseline.</p></div>
+      <p class="limit">Units sold are a proxy for demand. Costs, storage and lead times are simulated. The default-budget profit gain is not established: its moving-block bootstrap interval includes zero. No realized business savings are claimed.</p>
+      <button type="button" class="detail" aria-expanded="false" aria-controls="method-1">Read the method<span aria-hidden="true">+</span></button>
+      <div id="method-1" class="method" hidden><ol>
+        <li>Prepare sales data and separate training, validation and test periods.</li>
+        <li>Compare demand forecasts, then evaluate reorder and optimization policies on the same inputs.</li>
+        <li>Constrain purchasing by budget, storage and integer case packs; inspect sensitivity and uncertainty.</li>
+      </ol></div>
+      <div class="case-footer"><span>Complete analysis package · code publication pending</span></div>
+    </article>
+
+    <article class="case" data-category="data" aria-labelledby="project-2">
+      <div class="case-top"><span class="index">02</span><span class="eyebrow">Geospatial analytics + operations research</span></div>
+      <h3 class="project-title" id="project-2">Alexandria Service Siting</h3>
+      <p class="question">Where should five service locations go?</p>
+      <p class="summary">An auditable location-allocation study that combines population estimates and modeled road travel with exact optimization, rather than choosing sites by intuition.</p>
+      <div class="tags"><span>Python</span><span>OR-Tools / SCIP</span><span>WorldPop</span><span>OSM / OSRM</span></div>
+      <div class="photos single" role="region" aria-label="Alexandria Service Siting project visual">
+        <img src="alexandria-map.png" alt="Alexandria population map with five selected service sites, alongside coverage comparisons for exact, greedy, spread and random siting.">
+      </div>
+      <p class="caption">Actual project map and method comparison. Coverage refers to the modeled population within 10 modeled travel minutes, not observed real-world response times.</p>
+      <div class="stat-grid">
+        <div><span>Demand representation</span><strong>605 points</strong></div>
+        <div><span>Candidate locations</span><strong>380 sites</strong></div>
+        <div><span>Five-site modeled coverage</span><strong>88.0%</strong></div>
+      </div>
+      <div class="insight"><span class="eyebrow">The useful finding</span><p>The exact model reaches 88.0% coverage versus 86.4% for the greedy baseline. The useful story is a proven answer inside a stated model, not an exaggerated improvement claim.</p></div>
+      <p class="limit">Educational prototype. Population is based on WorldPop 2020; travel times are modeled. Capacity and cost assumptions in the extensions are illustrative, not deployment specifications.</p>
+      <button type="button" class="detail" aria-expanded="false" aria-controls="method-2">Read the method<span aria-hidden="true">+</span></button>
+      <div id="method-2" class="method" hidden><ol>
+        <li>Aggregate population estimates and construct a site-to-demand road-time matrix.</li>
+        <li>Solve a mixed-integer maximum-coverage model, then compare it with sensible and naive baselines.</li>
+        <li>Extend the study with capacity assignments and budget-constrained facility tiers.</li>
+      </ol></div>
+      <div class="case-footer"><span>Public repository · educational study</span><a class="link" href="https://github.com/Mohammed-ALawami/alexandria-service-siting">Explore the repository</a></div>
+    </article>
+
+    <article class="case" data-category="software" aria-labelledby="project-3">
+      <div class="case-top"><span class="index">03</span><span class="eyebrow">Evidence-first defensive monitoring</span></div>
+      <h3 class="project-title" id="project-3">Cyber Sentinel</h3>
+      <p class="question">Can every alert explain why it fired?</p>
+      <p class="summary">A defensive authentication-log monitoring prototype with named detection rules, traceable scores, raw evidence and an analyst triage workflow.</p>
+      <div class="tags"><span>Python</span><span>FastAPI</span><span>SQLite</span><span>WebSocket</span></div>
+      <div class="photos single" role="region" aria-label="Cyber Sentinel project visual">
+        <img src="cyber-dashboard.png" alt="Cyber Sentinel dashboard showing synthetic authentication logs and evidence-linked alerts with severity levels.">
+      </div>
+      <p class="caption">Actual application screenshot using synthetic replay data and documentation-range addresses. It is not a feed from a real monitored server.</p>
+      <div class="stat-grid">
+        <div><span>Detection logic</span><strong>5 named rule detectors</strong></div>
+        <div><span>Evaluation</span><strong>6 synthetic scenarios</strong></div>
+        <div><span>Workflow</span><strong>Review, resolve, reopen</strong></div>
+      </div>
+      <div class="insight"><span class="eyebrow">The useful finding</span><p>Detection should be reviewable: an alert needs evidence and an explanation, not just a high number or a red label.</p></div>
+      <p class="limit">Synthetic, single-host authentication-log prototype. Rule-based, not machine learning. Detection-only, with no antivirus, blocking or production SOC claim.</p>
+      <button type="button" class="detail" aria-expanded="false" aria-controls="method-3">Read the method<span aria-hidden="true">+</span></button>
+      <div id="method-3" class="method" hidden><ol>
+        <li>Parse authentication events and correlate suspicious behavior into alerts.</li>
+        <li>Explain each score with rule contributions and supporting log lines.</li>
+        <li>Replay known scenarios and document detection behavior and limitations.</li>
+      </ol></div>
+      <div class="case-footer"><span>Public repository · synthetic evaluation</span><a class="link" href="https://github.com/Mohammed-ALawami/cyber-sentinel">Explore the repository</a></div>
+    </article>
+
+    <article class="case" data-category="software" aria-labelledby="project-4">
+      <div class="case-top"><span class="index">04</span><span class="eyebrow">Arabic-first business software</span></div>
+      <h3 class="project-title" id="project-4">TITAN POS &amp; ERP</h3>
+      <p class="question">How do transactions stay consistent across retail workflows?</p>
+      <p class="summary">A POS and inventory/accounting application connecting sales, purchases, stock movements and financial records, with local offline workflows and optional branch-to-central synchronization.</p>
+      <div class="tags"><span>FastAPI</span><span>React / TypeScript</span><span>SQLAlchemy</span><span>SQLite</span></div>
+      <div class="photos single" role="region" aria-label="TITAN POS &amp; ERP project visual">
+        <img src="titan-ui.png" alt="Arabic TITAN sale-review modal with a synthetic test item and a clearly labeled non-tax test receipt.">
+      </div>
+      <p class="caption">Existing development checkpoint screenshot: synthetic test transaction, not a real customer record or production deployment.</p>
+      <div class="stat-grid">
+        <div><span>Interface</span><strong>Arabic-first</strong></div>
+        <div><span>Costing</span><strong>Weighted average</strong></div>
+        <div><span>Status</span><strong>In development</strong></div>
+      </div>
+      <div class="insight"><span class="eyebrow">The useful finding</span><p>Business software is about dependable state and financial consistency, not only screens. Offline work, synchronization and data integrity need explicit boundaries.</p></div>
+      <p class="limit">Private development project validated on synthetic data. No live-shop adoption, completed production rollout, Windows acceptance or physical printer/scanner acceptance is claimed.</p>
+      <button type="button" class="detail" aria-expanded="false" aria-controls="method-4">Read the method<span aria-hidden="true">+</span></button>
+      <div id="method-4" class="method" hidden><ol>
+        <li>Connect catalog, sales, returns, inventory and accounting workflows.</li>
+        <li>Use transaction journals, permissions and audit records to support consistency.</li>
+        <li>Exercise isolated synthetic cases and document remaining acceptance boundaries.</li>
+      </ol></div>
+      <div class="case-footer"><span>Private development · checkpoint under validation</span></div>
+    </article>
+  </section>
+
+  <section class="group" aria-label="Background">
+    <p class="group-label">Background</p>
+    <h2 class="group-heading">Tools with a direction.</h2>
+    <div class="background">
+      <div>
+        <h3 class="small-heading">Core tools</h3>
+        <div class="skill-list"><span>Python</span><span>SQL</span><span>Excel</span><span>Power BI</span></div>
+        <p class="p">Current focus: Data Analysis and Operations Research. Further interests include Machine Learning and Deep Learning.</p>
+        <p class="p secondary">ML and Deep Learning are areas of focus, not claims of completed projects or production expertise in this portfolio.</p>
+      </div>
+      <div>
+        <h3 class="small-heading">Education</h3>
+        <p class="school">Arab Open University</p>
+        <p class="p">Computer Science<br>Third-year student<br>Expected graduation: 2027, estimated</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="group" aria-label="Contact">
+    <p class="group-label">Continue the conversation</p>
+    <h2 class="group-heading">Start with the work.</h2>
+    <p class="p">The public repositories include the technical context behind the case studies. For project discussions and opportunities, get in touch by email.</p>
+    <p class="p"><a class="link" href="mailto:mohammadosman.data@gmail.com">mohammadosman.data@gmail.com</a><br><a class="link" href="https://github.com/Mohammed-ALawami">github.com/Mohammed-ALawami</a></p>
+  </section>
+
+  <footer class="closing">Selected work · November 2026. Project development included AI assistance. Project results describe the stated models and tests, not employment history or sole implementation.</footer>
+
+</main>
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.choice-row .button');
+  var cases = document.querySelectorAll('.case');
+  var count = document.getElementById('count');
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      var f = btn.getAttribute('data-filter');
+      var shown = 0;
+      cases.forEach(function (c) {
+        var visible = f === 'all' || c.getAttribute('data-category') === f;
+        c.hidden = !visible;
+        if (visible) shown++;
+      });
+      count.textContent = shown + ' of ' + cases.length + ' projects shown';
+    });
+  });
+  document.querySelectorAll('.detail').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var panel = document.getElementById(btn.getAttribute('aria-controls'));
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      panel.hidden = open;
+      btn.childNodes[0].textContent = open ? 'Read the method' : 'Hide method';
+      btn.querySelector('span').textContent = open ? '+' : '−';
+    });
+  });
+})();
+</script>
+</body>
+</html>
