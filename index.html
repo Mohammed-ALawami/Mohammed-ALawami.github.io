@@ -69,13 +69,66 @@
       </div>
       <div class="insight"><span class="eyebrow">The useful finding</span><p>A better forecast does not automatically produce a better purchasing decision. The value of optimization depends on the constraints and the strength of the baseline.</p></div>
       <p class="limit">Units sold are a proxy for demand. Costs, storage and lead times are simulated. The default-budget profit gain is not established: its moving-block bootstrap interval includes zero. No realized business savings are claimed.</p>
-      <button type="button" class="detail" aria-expanded="false" aria-controls="method-1">Read the method<span aria-hidden="true">+</span></button>
+      <button type="button" class="detail" aria-expanded="false" aria-controls="method-1" data-closed="Method &amp; figure gallery" data-open="Hide method &amp; figures">Method &amp; figure gallery<span aria-hidden="true">+</span></button>
       <div id="method-1" class="method" hidden><ol>
         <li>Prepare sales data and separate training, validation and test periods.</li>
         <li>Compare demand forecasts, then evaluate reorder and optimization policies on the same inputs.</li>
         <li>Constrain purchasing by budget, storage and integer case packs; inspect sensitivity and uncertainty.</li>
-      </ol></div>
-      <div class="case-footer"><span>Complete analysis package · code publication pending</span></div>
+      </ol>
+      <div class="gallery" role="region" aria-label="Demand &amp; Inventory Decision Lab figure gallery">
+        <p class="gallery-label">The evidence, in figures. Every chart is actual project output; select any figure to view it full size.</p>
+        <div class="gallery-grid">
+        <figure>
+          <a href="inventory/00_hero_banner.png"><img src="inventory/00_hero_banner.png" alt="Demand &amp; Inventory Decision Lab project banner." loading="lazy"></a>
+          <figcaption>Project banner from the repository README.</figcaption>
+        </figure>
+        <figure>
+          <a href="inventory/07_pipeline.png"><img src="inventory/07_pipeline.png" alt="Pipeline diagram from raw retail sales data through SQL analysis, forecasting and optimization to a purchase order recommendation." loading="lazy"></a>
+          <figcaption>The pipeline: raw retail sales to a concrete purchase order.</figcaption>
+        </figure>
+        <figure>
+          <a href="inventory/01_demand.png"><img src="inventory/01_demand.png" alt="Two years of weekly demand across the retail dataset, with a strong Q4 peak." loading="lazy"></a>
+          <figcaption>Two years of weekly demand, with the Q4 peak the model has to anticipate.</figcaption>
+        </figure>
+        <figure>
+          <a href="inventory/11_monthly_revenue.png"><img src="inventory/11_monthly_revenue.png" alt="Monthly revenue over the two-year retail dataset." loading="lazy"></a>
+          <figcaption>Monthly revenue across the full dataset.</figcaption>
+        </figure>
+        <figure>
+          <a href="inventory/06_pareto.png"><img src="inventory/06_pareto.png" alt="Pareto chart showing revenue concentrated in a few hundred of about 3,500 products." loading="lazy"></a>
+          <figcaption>Revenue is concentrated in a few hundred of ~3,500 products; the 80 modelled SKUs carry 24.6% of units sold.</figcaption>
+        </figure>
+        <figure>
+          <a href="inventory/10_sku_heatmap.png"><img src="inventory/10_sku_heatmap.png" alt="Heatmap of weekly demand across the 80 modelled SKUs." loading="lazy"></a>
+          <figcaption>Weekly demand heatmap across the 80 modelled SKUs.</figcaption>
+        </figure>
+        <figure>
+          <a href="inventory/03_profit.png"><img src="inventory/03_profit.png" alt="Weekly profit comparison between the reorder rule and the optimized purchasing policy on the same inputs." loading="lazy"></a>
+          <figcaption>Weekly profit: reorder rule vs optimized purchasing, same inputs.</figcaption>
+        </figure>
+        <figure>
+          <a href="inventory/04_sensitivity.png"><img src="inventory/04_sensitivity.png" alt="Sensitivity analysis of the optimized purchasing result under changed cost and constraint assumptions." loading="lazy"></a>
+          <figcaption>Sensitivity: how the optimized result moves when assumptions change.</figcaption>
+        </figure>
+        <figure>
+          <a href="inventory/05_cumulative.png"><img src="inventory/05_cumulative.png" alt="Cumulative profit difference between the two policies over the 26-week test window." loading="lazy"></a>
+          <figcaption>Cumulative profit difference over the 26-week held-out window.</figcaption>
+        </figure>
+        <figure>
+          <a href="inventory/09_weekly_diff.png"><img src="inventory/09_weekly_diff.png" alt="Weekly profit difference between the optimized and reorder policies, positive in 17 of 26 weeks." loading="lazy"></a>
+          <figcaption>Weekly difference: better in 17 of 26 weeks, worse in 9; most of the gain came in the November peak.</figcaption>
+        </figure>
+        <figure>
+          <a href="inventory/12_margin_leak.png"><img src="inventory/12_margin_leak.png" alt="Estimated margin lost to stockouts under each purchasing policy." loading="lazy"></a>
+          <figcaption>Estimated margin lost to stockouts under each policy.</figcaption>
+        </figure>
+        <figure>
+          <a href="inventory/08_dashboard_preview.png"><img src="inventory/08_dashboard_preview.png" alt="Preview of the static analysis dashboard shipped as dashboard.html in the repository." loading="lazy"></a>
+          <figcaption>The static dashboard shipped as dashboard.html in the repository.</figcaption>
+        </figure>
+        </div>
+      </div></div>
+      <div class="case-footer"><span>Public repository · complete analysis package</span><a class="link" href="https://github.com/Mohammed-ALawami/demand-inventory-decision-lab">Explore the repository</a></div>
     </article>
 
     <article class="case" data-category="data" aria-labelledby="project-2">
@@ -221,7 +274,7 @@ document.querySelector('[data-key="IMG_ALEXANDRIA_MAP"]').src = window.IMG_ALEXA
       var open = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', open ? 'false' : 'true');
       panel.hidden = open;
-      btn.childNodes[0].textContent = open ? 'Read the method' : 'Hide method';
+      btn.childNodes[0].textContent = open ? (btn.dataset.closed || 'Read the method') : (btn.dataset.open || 'Hide method');
       btn.querySelector('span').textContent = open ? '+' : '−';
     });
   });
