@@ -8,7 +8,6 @@
 <meta property="og:title" content="Mohammad Osman — Selected work">
 <meta property="og:description" content="Data Analysis & Operations Research. Selected project experience in forecasting, optimization and software systems.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://mohammed-alawami.github.io/mohammad.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234d3533'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23fdfcfb' text-anchor='middle'%3EMO%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -29,7 +28,7 @@
       <div class="hero-link"><a class="link" href="https://github.com/Mohammed-ALawami">Explore my GitHub</a></div>
     </div>
     <figure class="portrait">
-      <img src="mohammad.jpg" alt="Portrait of Mohammad Osman wearing a white shirt, dark tie and black jacket against a gray background.">
+      <img data-key="IMG_MOHAMMAD" alt="Portrait of Mohammad Osman wearing a white shirt, dark tie and black jacket against a gray background.">
       <figcaption>Mohammad Osman<span>Selected work · 2026</span></figcaption>
     </figure>
   </section>
@@ -60,7 +59,7 @@
       <p class="summary">A retail decision study that links SQL analysis, demand forecasts and purchasing constraints, then tests whether a more sophisticated policy actually helps.</p>
       <div class="tags"><span>Python</span><span>SQL / DuckDB</span><span>HiGHS</span><span>MILP</span></div>
       <div class="photos single" role="region" aria-label="Demand &amp; Inventory Decision Lab project visual">
-        <img src="inventory-forecast.png" alt="Forecast error comparison for moving-average, smoothing, seasonal and naive methods, with separate validation and test bars.">
+        <img data-key="IMG_INVENTORY_FORECAST" alt="Forecast error comparison for moving-average, smoothing, seasonal and naive methods, with separate validation and test bars.">
       </div>
       <p class="caption">Actual project output: forecast backtest. WAPE is forecast error; lower is better. MA8 was selected on validation, not on the test window.</p>
       <div class="stat-grid">
@@ -86,7 +85,7 @@
       <p class="summary">An auditable location-allocation study that combines population estimates and modeled road travel with exact optimization, rather than choosing sites by intuition.</p>
       <div class="tags"><span>Python</span><span>OR-Tools / SCIP</span><span>WorldPop</span><span>OSM / OSRM</span></div>
       <div class="photos single" role="region" aria-label="Alexandria Service Siting project visual">
-        <img src="alexandria-map.png" alt="Alexandria population map with five selected service sites, alongside coverage comparisons for exact, greedy, spread and random siting.">
+        <img data-key="IMG_ALEXANDRIA_MAP" alt="Alexandria population map with five selected service sites, alongside coverage comparisons for exact, greedy, spread and random siting.">
       </div>
       <p class="caption">Actual project map and method comparison. Coverage refers to the modeled population within 10 modeled travel minutes, not observed real-world response times.</p>
       <div class="stat-grid">
@@ -112,7 +111,7 @@
       <p class="summary">A defensive authentication-log monitoring prototype with named detection rules, traceable scores, raw evidence and an analyst triage workflow.</p>
       <div class="tags"><span>Python</span><span>FastAPI</span><span>SQLite</span><span>WebSocket</span></div>
       <div class="photos single" role="region" aria-label="Cyber Sentinel project visual">
-        <img src="cyber-dashboard.png" alt="Cyber Sentinel dashboard showing synthetic authentication logs and evidence-linked alerts with severity levels.">
+        <img data-key="IMG_CYBER_DASHBOARD" alt="Cyber Sentinel dashboard showing synthetic authentication logs and evidence-linked alerts with severity levels.">
       </div>
       <p class="caption">Actual application screenshot using synthetic replay data and documentation-range addresses. It is not a feed from a real monitored server.</p>
       <div class="stat-grid">
@@ -138,7 +137,7 @@
       <p class="summary">A POS and inventory/accounting application connecting sales, purchases, stock movements and financial records, with local offline workflows and optional branch-to-central synchronization.</p>
       <div class="tags"><span>FastAPI</span><span>React / TypeScript</span><span>SQLAlchemy</span><span>SQLite</span></div>
       <div class="photos single" role="region" aria-label="TITAN POS &amp; ERP project visual">
-        <img src="titan-ui.png" alt="Arabic TITAN sale-review modal with a synthetic test item and a clearly labeled non-tax test receipt.">
+        <img data-key="IMG_TITAN_UI" alt="Arabic TITAN sale-review modal with a synthetic test item and a clearly labeled non-tax test receipt.">
       </div>
       <p class="caption">Existing development checkpoint screenshot: synthetic test transaction, not a real customer record or production deployment.</p>
       <div class="stat-grid">
@@ -186,6 +185,18 @@
   <footer class="closing">Selected work · November 2026. Project development included AI assistance. Project results describe the stated models and tests, not employment history or sole implementation.</footer>
 
 </main>
+<script src="img-mohammad.js"></script>
+<script src="img-inventory_forecast.js"></script>
+<script src="img-titan_ui.js"></script>
+<script src="img-cyber_dashboard.js"></script>
+<script src="img-alexandria_map.js"></script>
+<script>
+document.querySelector('[data-key="IMG_MOHAMMAD"]').src = window.IMG_MOHAMMAD;
+document.querySelector('[data-key="IMG_INVENTORY_FORECAST"]').src = window.IMG_INVENTORY_FORECAST;
+document.querySelector('[data-key="IMG_TITAN_UI"]').src = window.IMG_TITAN_UI;
+document.querySelector('[data-key="IMG_CYBER_DASHBOARD"]').src = window.IMG_CYBER_DASHBOARD;
+document.querySelector('[data-key="IMG_ALEXANDRIA_MAP"]').src = window.IMG_ALEXANDRIA_MAP;
+</script>
 <script>
 (function () {
   var buttons = document.querySelectorAll('.choice-row .button');
